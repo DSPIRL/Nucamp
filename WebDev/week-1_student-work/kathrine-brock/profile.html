@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <!--
+        JOHN COMMENT:
+        Below are two HTML elements you'll want to add to nest in your "head" element
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add the title for your webpage here</title>
+    -->
+</head>
+
+<body>
+    <h1>Profile - Kat Brock</h1>
+    <nav>
+        <a href="#about">About Me</a> | <a href="interests">Interests</a> | <a href="#contactMe">Contact Me</a>
+        <!--
+            JOHN COMMENT:
+            Your "interests" link does not function correctly because your missing the prefixed "#".
+        -->
+    </nav>
+    <br>
+    <section>
+        <img src="images\profile.jpg" height="200" alt="black and white photo of woman smiling">
+        <br>
+        <audio src="mp3s\sample-3s.mp3" controls>Your browser does not support HTML5 audio. Here is <a
+                href="mp3s/sample-3s.mp3">a link to the audio</a> instead.</audio>
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <ul>
+            <li>I was born in Denver, Colorado.</li>
+            <li>I live in Tulsa, Oklahoma.</li>
+            <li>I am currently a stay at home parent, but before that I worked as an IT Business Systems Analyst. </li>
+            <li>My goal is to have a job that challenges me while allowing a good work life balance so that I can travel
+                full time with my family.</li>
+            <li>I would love to visit all of the <a href="https://www.nps.gov/findapark/index.htm">National Parks</a> in
+                the United States.</li>
+            <!--
+                JOHN COMMENT:
+                You'll want to add the "target" attribute and value "_blank" to your link. This will open up a new tab rather redirect the user from your webpage.
+
+                p.s. I LOVE this. I've visited Arches, Bryce, Crater Lake, Cuyahoga Valley, The Grand Canyon, Yosemite, and Zion. Next on the list is Glacier and the Grand Tetons.
+            -->
+        </ul>
+        <img src="images\National-Parks-States-USA-Map-800px.png" width="500"
+            alt="map of the United States with green dots designatinng the national parks">
+        <p>Map of the 63 United States National Parks</p>
+    </section>
+    <section id="interests">
+        <h2>Interests</h2>
+        <ul>
+            <li>I enjoy traveling with my family to hike and sightsee.</li>
+            <li>I <strong>love</strong> coffee and I could drink it all day long.</li>
+            <li>I like learning new things.</li>
+        </ul>
+    </section>
+    <section id="contactMe">
+        <h2>Say Hello</h2>
+        <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method="post">
+            <fieldset>
+                <legend>Send me a message</legend>
+                <div>
+                    <label for="name"> Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" />
+                </div>
+                <div>
+                    <label for="yourEmail">Your Email:
+                        <input type="email" id="yourEmail" name="email" placeholder="Your Email Address" />
+                </div>
+                <label for="message">Message:</label>
+                <textarea name="message" rows="4" cols="60" placeholder="Your message here"></textarea>
+                <input type="submit" />
+            </fieldset>
+        <!-- 
+            JOHN COMMENT: 
+            Your form tag is floating due to you missing a </form> tag.
+        -->
+    </section>
+</body>
+
+</html>
+
+<!--
+    JOHN COMMENT:
+    GREAT WORK Kat on your W1 Workshop Assignment. Please review my comments above. You did a FANTASTIC job on your assignment and great work stretching your work by incorporating a functioning form.
+-->

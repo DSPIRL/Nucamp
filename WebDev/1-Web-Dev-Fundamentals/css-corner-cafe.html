@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Practice: CSS Corner Cafe</title>
+    <link rel="stylesheet" href="css/css-corner-cafe-styles.css">
+</head>
+<body>
+<header id="navigation">
+    <h1 id="brand-logo">CSS Corner Cafe</h1>
+    <div id="header-menu">
+        <ul>
+            <li><a href="#navigation">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#contact-us">Contact</a></li>
+        </ul>
+    </div>
+</header>
+<main>
+    <div class="menu">
+        <section>
+            <h2 id="menu">Menu</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Cost</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Coffee</td>
+                    <td>$2</td>
+                </tr>
+                <tr>
+                    <td>Tea</td>
+                    <td>$1.50</td>
+                </tr>
+                <tr>
+                    <td>Chicken & Waffles</td>
+                    <td>$12</td>
+                </tr>
+                <tr>
+                    <td>Blueberry Pancakes</td>
+                    <td>$6</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <section>
+        <h2>Submit Your Review</h2>
+        <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" />
+            <label for="rating">Your Rating:</label>
+            1 <input type="range" id="rating" name="rating" min="1" max="5" /> 5
+            <input type="submit" id="submit-btn" />
+        </form>
+    </section>
+</main>
+</body>
+<footer id="contact-us">
+    <h2>Contact</h2>
+    <p>Call us at: <a href="tel:+15555551212">1-555-555-1212</a></p>
+    <address>
+        CSS Corner Cafe<br />
+        101 W Main St<br />
+        Bellevue, WA 98004
+    </address>
+</footer>
+</html>

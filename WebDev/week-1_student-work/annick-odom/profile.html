@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<!--
+    JOHN COMMENT:
+    The "html" element should encompass the "head" and "body" elements.
+-->
+
+<head>
+    <title>Profile - Annick Odom</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+    <style>
+        body {
+            background-color: powderblue;
+        }
+
+        h1 {
+            color: darkslateblue;
+            border: 2px solid darkslateblue;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        h2 {
+            color: darkcyan;
+            border: 2px solid darkcyan;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        p {
+            color: blueviolet;
+            font-size: 18px;
+        }
+
+        figcaption {
+            color: grey;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="./week1/images/banner.png" alt="Green lilypads" width="100%">
+
+    <h1 style="color: darkslateblue">Profile - Annick Odom</h1>
+
+    <figure>
+        <img src="./week1/images/profilePictures/annick-profile-pic.jpg"
+            alt="Profile Picture of Annick smiling in front of a lake at golden hour" height=320px class="left">
+        <img src="./week1/images/bass-crankie.jpg"
+            alt="Annick Odom with her double bass and a picture scroll called a crankie" height=320px class="right">
+        <figcaption>Annick Odom at Gallup Park in Ann Arbor at sunset</figcaption>
+    </figure>
+    <!-- 
+        JOHN COMMENT:
+        While I don't use the "figure" element all that often, great use of it here. 
+    -->
+
+    <nav class="center">
+        <a href="#about-me">About Me</a> |
+        <a href="#interests">Interests</a> |
+        <a href="#music">Music</a> |
+    </nav>
+
+    <section id="about-me" class="center">
+        <h2>About Me</h2>
+        <ul>
+            <li>
+                <p>I was born in West Virginia.</p>
+            </li>
+            <li>
+                <p>I live in Michigan.</p>
+            </li>
+            <li>
+                <p>I currently work as a classical bassist and in communications.</p>
+            </li>
+            <li>
+                <p>I hope to do work as a data scientist, but need a bit more background with the backend to do this...
+                    I think. I already have a background in psychology/statistics.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="interests">
+        <h2>Interests</h2>
+        <ul>
+            <li>
+                <p>Cook food</p>
+            </li>
+            <li>
+                <p>Make music</p>
+            </li>
+            <li>
+                <p>Go for walks in the woods</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="music">
+        <h2>My Music</h2>
+        <table width="100%" border="0">
+        <!-- 
+            JOHN COMMENT:
+            Looks like the border attribute is not supported in HTML5, which is why it's showing up in red in VS Code. 
+        -->
+            <tr>
+                <td>
+                    <a href="https://annickodom.bandcamp.com/album/the-sun-sits-in-my-hair"><img
+                            src="./week1/images/annajane-sunsetsalbum.jpg" alt="Image of my album" class="left"> </a>
+                    <figcaption>
+                        My album from several years ago <em>The Sun Sits in my Hair</em>
+                    </figcaption>
+                    <!-- 
+                        JOHN COMMENT:
+                        The "figcaption" element is meant to be used within the "figure" element. Per W3Schools:
+                        Use a <figure> element to mark up a photo in a document, and a <figcaption> element to define a caption for the photo.
+                    -->
+                </td>
+                <td>
+                    <a href="https://annickodom.bandcamp.com/track/seven-bones"><img
+                            src="./week1/images/a0825447584_2.jpg" alt="Image of my album" class=""></a>
+                    <figcaption>
+                        A single called <em>Seven Bones.</em>
+                    </figcaption>
+                    <!-- 
+                        JOHN COMMENT:
+                        The "figcaption" element is meant to be used within the "figure" element. Per W3Schools:
+                        Use a <figure> element to mark up a photo in a document, and a <figcaption> element to define a caption for the photo.
+                    -->
+                </td>
+                <td>
+                    <a href="https://annickodom.bandcamp.com/track/a-few-more-months"><img
+                            src="./week1/images/a1250320206_2.jpg" alt="Image of my album" class="right"></a>
+                    <figcaption>
+                        A single called <em>A Few More Months.</em>
+                    </figcaption>
+                    <!-- 
+                        JOHN COMMENT:
+                        The "figcaption" element is meant to be used within the "figure" element. Per W3Schools:
+                        Use a <figure> element to mark up a photo in a document, and a <figcaption> element to define a caption for the photo.
+                    -->
+                </td>
+            </tr>
+        </table>
+    </section>
+    <p>You can find my music on YouTube <a href="https://www.youtube.com/user/AnnickOdom" target="_blank"
+            rel="noopener noreferrer">by clicking the link here.</a></p>
+
+    <p>You can also see my music on Bandcamp <a href="https://annickodom.bandcamp.com" target="_blank"
+            rel="noopener noreferrer">by clicking the link here.</a>
+    </p>
+
+    <p>This past year, I was an apprentice in West Virginia's Folklife program. I studied fiddle with Gerry Milnes. If
+        you'd like to hear the kind of music I made during this apprenticeship, you can listen to a field recording
+        below. You'll hear Melvin Wine (a great West Virginian fiddler) playing <em>The Possum's Tail is Bare</em>.
+        <audio src="./week1/mp3s/742_The_Possums_Tail_Is_Bare.mp3" controls loop>
+            Your browser doesn't support HTML5 audio. Here is<a
+                href="/Users/annickwolfbrown/Desktop/NucampFolder/WebDev/1-Web-Dev-Fundamentals/week1/mp3s/742_The_Possums_Tail_Is_Bare.mp3">
+                a link to the audio file of <em>The Possum's Tail is Bare</em> instead.</a>
+        </audio>
+    </p>
+
+</body>
+
+<!--
+    JOHN COMMENT:
+    GREAT WORK Annick on your W1 Workshop Assignment. Please review my comments above. You did a FANTASTIC job on your assignment and great work stretching your work by incorporating internal styles.
+-->
