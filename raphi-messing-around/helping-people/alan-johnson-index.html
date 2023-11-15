@@ -26,7 +26,7 @@
       referrerpolicy="no-referrer"
     />
     <!-- CSS Link -->
-    <link rel="stylesheet" href="../nucampsite/css/style.css" />
+    <link rel="stylesheet" href="../../WebDev/1-Web-Dev-Fundamentals/nucampsite/css/styles.css" />
 
     <title>Nucamp: A Better Way To Camp</title>
   </head>
@@ -37,7 +37,7 @@
       <div class="row">
         <!-- logo img top -->
         <div class="col-4 col-sm-3 col-md-2 align-self-center">
-          <img src="img/logo.png" class="img-fluid" />
+          <img src="../../WebDev/1-Web-Dev-Fundamentals/nucampsite/img/logo.png" class="img-fluid" />
         </div>
         <!-- fROM here is THE START -->
         <div class="col">
@@ -57,10 +57,12 @@
     </div>
     <!-- @rAPHI SECOND PART OF THE CODE  -->
     <!-- reserve a campsite main page -->
-    <section>
+    <section class="text-dark">
       <div class="modal fade" id="reserveModal">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
+
+<!--              @Alan - Color is set to white by default, I added the "text-dark" class to the modal-header and modal-body divs to make the text black-->
             <div class="modal-header">
               <h3 class="modal-title">Reserve a Campsite</h3>
               <button
@@ -70,6 +72,8 @@
                 aria-label="Close"
               ></button>
             </div>
+<!--            END OF FIX-->
+
             <div class="modal-body">
               <div class="container-fluid">
                 <form>
@@ -126,7 +130,7 @@
       <div class="container">
         <!--logo image nav -->
         <a class="navbar-brand" href="#"
-          ><img src="img/logo.png" height="30" width="30"
+          ><img src="../../WebDev/1-Web-Dev-Fundamentals/nucampsite/img/logo.png" height="30" width="30"
         /></a>
         <button
           class="navbar-toggler"
