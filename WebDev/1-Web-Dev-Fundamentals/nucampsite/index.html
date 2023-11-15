@@ -40,9 +40,14 @@
                 <div class="col-4 col-sm-3 align-self-center">
                     <img src="img/logo.png" alt="Nucamp logo" class="img-fluid">
                 </div>
-                <div class="col">
+                <div class="col d-inline align-self-end">
                     <h1>Nucamp</h1>
                     <h2>a better way to camp</h2>
+                </div>
+                <div class="col col-md-4 col-xl-2 mt-4 align-self-sm-center d-sm-inline">
+                    <button class="form-control bg-info">
+                        <a class="text-white text-decoration-none" href="#reservation-form">CAMP BETTER</a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -138,6 +143,47 @@
             </div>
         </section>
 
+        <!-- form section-->
+        <section class="row row-content align-items-center" id="reservation-form">
+            <div class="column mx-auto col-9">
+                <div class="card">
+                    <div class="bg-info">
+                        <h3 class="card-header text-white">Reserve a Campsite</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <div class="row mb-3 d-flex">
+                                <label class="form-label col" for="number-of-campers">Number of Campers</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select" name="number-of-campers" id="number-of-campers" required>
+                                        <option value="">Select...</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="form-label col" for="date">Date</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="date" name="date" id="date" placeholder="01/02/2023" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col col-5 col-sm-4 col-md-3 col-lg-2">
+                                    <button class="form-control bg-primary text-white" type="submit">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
 	</main>
 
     <!-- footer -->
