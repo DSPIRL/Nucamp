@@ -39,8 +39,6 @@ footer {
     margin-left: auto;
 }
 
-.tab-content {
-    border: 1px solid #ddd;
-    border-top: none;
-    padding: 10px;
-}
+.accordion-button {
+    background-color: #d3d3d3;
+  }
