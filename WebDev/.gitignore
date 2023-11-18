@@ -1,0 +1,15 @@
+# Ignore compiled files
+*.class
+*.o
+*.pyc
+
+# Ignore IDE and editor files
+.idea/
+.vscode/
+
+# Ignore log files
+*.log
+
+# Ignore dependency directories
+node_modules/
+vendor/
