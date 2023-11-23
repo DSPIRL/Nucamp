@@ -49,3 +49,7 @@ footer {
 .carousel {
     border: solid #5637DD;
 }
+
+.accordion-button:not(.accordion-button:parent (.accordion-collapse .show)) {
+    background-color: #901CAD;
+}
