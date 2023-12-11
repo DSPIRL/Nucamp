@@ -8,7 +8,7 @@
     "build": "parcel build"
   },
   "keywords": [],
-  "author": "Raphael
+  "author": "Raphael",
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.10.3"
