@@ -76,25 +76,24 @@ function fibonacciSumUp() {
 }
 
 
-function fibonacciIsNumberPartOf() {
-    let numberToCheck = prompt("What number do you want to check?");
-    let a = 0;
-    let b = 1;
-    let count = 0;
-    let foundMatch;
-
-    while (a !== numberToCheck) {
-        if (a === numberToCheck) {
-
-        }
-
-
-        let next = a + b;
-        console.log(`Fibonacci: ${a}`);
-        console.log(`Count: ${count}`);
-        a = b;
-        b = next;
-        count++;
-
-    }
-}
+// function fibonacciIsNumberPartOf() {
+//     let numberToCheck = prompt("What number do you want to check?");
+//     let a = 0;
+//     let b = 1;
+//     let count = 0;
+//     let foundMatch;
+//
+//     while (a !== numberToCheck) {
+//         if (a === numberToCheck) {
+//
+//         }
+//
+//         let next = a + b;
+//         console.log(`Fibonacci: ${a}`);
+//         console.log(`Count: ${count}`);
+//         a = b;
+//         b = next;
+//         count++;
+//
+//     }
+// }
