@@ -1,53 +1,72 @@
 <!-- Contributors: Raphael, Manuel, Kathrine, Tyson -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>Wild Waves Aquatic Park</title>
 </head>
 <body>
-    <h1>Wild Waves Aquatic Park</h1>
-    <button type="button" onclick="buyTicket()">Purchase Attraction</button>
-    <script>
-        const WAVE_POOL_MIN_HEIGHT = 42; // in inches
-        const WATERSLIDE_MIN_HEIGHT = 48; // in inches
-        const LAZY_RIVER_MIN_HEIGHT = 36; // in inches
+<h1>Wild Waves Aquatic Park</h1>
+<button type="button" onclick="buyTicket()">Purchase Attraction</button>
+<script>
+    const WAVE_POOL_MIN_HEIGHT = 42; // in inches
+    const WATERSLIDE_MIN_HEIGHT = 48; // in inches
+    const LAZY_RIVER_MIN_HEIGHT = 36; // in inches
+    const ATTRACTION_LIST = ["wave", "water", "river"];
+    const AVAILABLE_ATTRACTIONS = new Set(ATTRACTION_LIST);
 
-        function buyTicket() {
-            const attractionType = prompt('Which attraction do you want to visit: type "wave" for wave pool, "water" for waterslide, or "river" for lazy river?').toLowerCase();
-            const userHeight = prompt('What is your height in inches?');
-            const isWithAdult = prompt("Are you with an adult?").toLowerCase();
-            const isTallEnough = checkHeight(attractionType, userHeight);
-            const accompaniedByAdult = checkIsWithAdult(isWithAdult, userHeight);
+    function buyTicket() {
+        const attractionType = checkAttractionValidity();
+        const userHeight = Number(prompt('What is your height in inches?'));
+        const isWithAdult = prompt("Are you with an adult?").toLowerCase();
+        const isTallEnough = checkHeight(attractionType, userHeight);
+        const accompaniedByAdult = checkIsWithAdult(isWithAdult, userHeight);
 
-            console.log("User's selected attraction is " + attractionType);
-            console.log("User's height is " + userHeight);
-            console.log(isTallEnough);
-            console.log(accompaniedByAdult);
+        console.log("User's selected attraction is " + attractionType);
+        console.log("User's height is " + userHeight);
+        console.log(isTallEnough);
+        console.log(accompaniedByAdult);
 
-            if (isTallEnough || accompaniedByAdult) {
-                alert("You are allowed to ride.")
-            } else {
-                alert("You are not allowed to ride.")
-            }
+        if (isTallEnough || accompaniedByAdult) {
+            alert(`You are allowed to ride ${attractionType}.`)
+        } else {
+            alert(`You are not allowed to ride ${attractionType}.`)
         }
 
-        function checkHeight(attraction, height) {
-            switch (attraction) {
-                case "wave":
-                    return height >= WAVE_POOL_MIN_HEIGHT;
-                case "water":
-                    return height >= WATERSLIDE_MIN_HEIGHT;
-                case "river":
-                    return height >= LAZY_RIVER_MIN_HEIGHT;
-            }
-        }
+    }
 
-        function checkIsWithAdult(isWithAdult, userHeight) {
-            return (userHeight >= 43 && (isWithAdult === "yes" || isWithAdult === "y"));
+    function checkAttractionValidity() {
+        // I should probably remove redundancy with the prompt, maybe through a function that returns the prompt?
+        let selectedAttraction = prompt(
+            'Which attraction do you want to visit: type "wave" for wave pool, "water" for waterslide, or "river" for lazy river?'
+        ).toString().toLowerCase();
+
+        while (!AVAILABLE_ATTRACTIONS.has(selectedAttraction)) {
+            alert("That is not a valid ride. Please try again.");
+
+            selectedAttraction = prompt(
+                'Which attraction do you want to visit: type "wave" for wave pool, "water" for waterslide, or "river" for lazy river?'
+            ).toString().toLowerCase();
         }
-    </script>
+        return selectedAttraction;
+    }
+
+    function checkHeight(attraction, height) {
+        switch (attraction) {
+            case "wave":
+                return height >= WAVE_POOL_MIN_HEIGHT;
+            case "water":
+                return height >= WATERSLIDE_MIN_HEIGHT;
+            case "river":
+                return height >= LAZY_RIVER_MIN_HEIGHT;
+            default:
+                return false;
+        }
+    }
+
+    function checkIsWithAdult(isWithAdult, userHeight) {
+        return (userHeight >= 43 && (isWithAdult === "yes" || isWithAdult === "y"));
+    }
+</script>
 </body>
 </html>

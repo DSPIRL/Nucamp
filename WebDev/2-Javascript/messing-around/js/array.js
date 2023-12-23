@@ -15,3 +15,17 @@ console.log(firstArray.includes(5));
 let thirdArray = firstArray.concat(secondArray);
 
 console.log(thirdArray);
+
+// add a comma and space after every array value
+let arrayThreeToString = thirdArray.join(", ");
+
+console.log(arrayThreeToString);
+
+console.log(firstArray.pop());
+
+console.log(firstArray.push(123));
+
+console.log(firstArray.shift());
+
+console.log(firstArray.unshift(10,11,12));
+
