@@ -2,22 +2,29 @@ let guessString = '';
 let guessNumber = 0;
 let correct = false;
 let numTries = 0;
-let previousGuesses = [];
+let previousGuessesArray = [];
 let alreadyGuessed = false;
 let status = '';
-let askForNumber = () => Number(prompt('Guess a number between 1 and 100: '));
+const gameNumber = generateGameNumber();
+let askForNumber = () => parseInt(prompt('Guess a number between 1 and 100: '));
 let askForValidDataType = () => Number(prompt(`That was not a number, please enter a number between 1 and 100: `));
-let askForNewNumber = (guessNumber, status) => Number(prompt(`${guessNumber} is too ${status}.\n\n \"Please\" guess another number between 1 and 100: `));
+let askForNewNumber = (guessNumber, status) => Number(prompt(`${guessNumber} is too ${status}.\n\nPlease guess another number between 1 and 100: `));
 
 
 function runGame() {
-	const gameNumber = generateGameNumber();
 	guessString = askForNumber();
+	guessNumber = +guessString;
+	correct = checkGuess(guessNumber, gameNumber);
+	do {
+
+	} while (!correct);
+
+
 
 	while (!correct) {
-		guessNumber = guessString;
-		previousGuesses.push(guessNumber);
-		if (typeof(guessString !== 'number')) {
+		guessNumber = +guessString;
+		previousGuessesArray.push(guessNumber);
+		if (typeof(guessNumber !== 'number')) {
 			guessString = askForValidDataType();
 		}
 		else if (alreadyGuessed) {
@@ -31,7 +38,7 @@ function runGame() {
 			status = "high";
 			guessString = askForNewNumber(guessNumber, status);
 		}
-        guessNumber = Number(guessString);
+        guessNumber = +guessString;
         numTries++;
         correct = checkGuess(guessNumber, gameNumber);
     }
@@ -42,5 +49,14 @@ function generateGameNumber() {
 }
 
 function checkGuess(guessNumber, gameNumber) {
+	let funCorrect = false;
+	if(isNaN(guessNumber)) {
+		askForValidDataType();
+	}
+	else if ((guessNumber < 1) || (guessNumber > 100)) {
+		askForNumber();
+	}
+
+
 	return (guessNumber === gameNumber);
 }

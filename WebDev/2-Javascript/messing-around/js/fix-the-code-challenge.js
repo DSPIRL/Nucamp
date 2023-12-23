@@ -73,7 +73,6 @@ if (hasTreat("cookie")) { // You should have a cookie in the treatsArr array.
 /****************************** Challenge 5 ******************************/
 const randomValue = (min, max) => {
     const val = Math.random() * (max - min) + min;
-    return;
 };
 console.log(randomValue(2,6)) // should return a random numeric value between 2 and 6.
 // For an explanation of Math.random, see:
