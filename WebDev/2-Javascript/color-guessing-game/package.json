@@ -1,0 +1,11 @@
+{
+  "name": "color-guessing-game",
+  "version": "1.0.0",
+  "description": "Game where a user guesses for a randomly picked color.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raphi",
+  "license": "ISC"
+}
