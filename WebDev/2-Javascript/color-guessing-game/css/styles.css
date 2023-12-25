@@ -1,0 +1,24 @@
+button {
+    width: 200px;
+    height: 50px;
+    font-size: 24px;
+    border: black solid 5px;
+    border-radius: 25px;
+}
+
+input {
+    width: 200px;
+    height: 30px;
+    border: black solid 5px;
+    border-radius: 25px;
+}
+
+input::placeholder {
+
+}
+
+
+
+/*#game-section {*/
+/*    display: none;*/
+/*}*/

@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Color Guessing Game</title>
 </head>
 <body>
 <h1>Color Guessing Game</h1>
-<button onclick="runGame()" type="button">Start Game</button>
+<section id="intro-section">
+    <p>Please click the Start Game button below.</p>
+    <button onclick="runGame()" type="button">Start Game</button>
+</section>
+<section id="game-section">
+    <p>Guess a color in the following color list.</p>
+<!--    <label for="guess-input">Color: </label>-->
+    <input type="text" id="guess-input" placeholder="Guess a color">
+
+</section>
 <script src="js/color-guessing-game.js"></script>
 </body>
 </html>

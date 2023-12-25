@@ -56,9 +56,10 @@ function changeColor(guess) {
     document.body.style.backgroundColor = guess;
 }
 
+function startGame() {
 
+}
 
 
 // document.querySelector('button').setAttribute( 'disabled', '');
-
 document.getElementById('start-game');
