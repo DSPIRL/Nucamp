@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    let companies = `
+[
+  {
+    "name": "Nucamp",
+    "numberOfEmployees": 150,
+    "ceo": "Ludo Fourrage",
+    "glassdoorRating": 5.0
+  },
+  {
+    "name": "Small Startup",
+    "numberOfEmployees": 5,
+    "ceo": null,
+    "glassdoorRating": 4.7
+  }
+]`;
+console.log(JSON.parse(companies)[0].ceo);
+</script>
+</body>
+</html>
