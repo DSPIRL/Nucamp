@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function parseStudentData(jsonVar) {
+        //add your code here
+        try {
+            JSON.parse(jsonVar);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    //you do not need to modify this data
+    const jsonString = '{ "name": "John", "age": 15, "grades": [90, 85, 78] }';
+    const invalidJsonString = '{ name: John, "age": 15, "grades": [90, 85, 78] }';
+
+    //uncomment these lines to view your test outputs
+    console.log(parseStudentData(jsonString)); // Output: { name: 'John', age: 22, grades: [ 90, 85, 78 ] }
+    console.log(parseStudentData(invalidJsonString)); // Output: Invalid JSON string provided.
+</script>
+</body>
+</html>

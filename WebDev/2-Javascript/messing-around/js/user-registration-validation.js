@@ -36,11 +36,11 @@ let validateEmail = (email) => {
 }
 
 // user validation
-let validateUser = (username, email, password) => {
+let validateUser = (user) => {
   try {
-    validateUsername(username);
-    validateEmail(email);
-    validatePassword(password);
+    validateUsername(user.username);
+    validatePassword(user.password);
+    validateEmail(user.email);
     console.log('Success');
     return true;
   } catch(error) {
@@ -49,7 +49,8 @@ let validateUser = (username, email, password) => {
   }
 };
 
-validateUser('username', 'something', 'Test');
+let userDude = { username: 'bobbobbins', password: 'Test1234!', email: 'bob@bob.bob'};
+validateUser(userDude);
 
 
 
