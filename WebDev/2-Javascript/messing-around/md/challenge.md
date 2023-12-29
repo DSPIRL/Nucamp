@@ -1,20 +1,24 @@
-# Class Practice: Vehicle Showroom System
+# What You'll Do
 
-## Scenario
-A newly opened car showroom in the bustling city of Autoville is experiencing an influx of customers interested in various types of vehicles. They require a system to manage and describe the vehicles, particularly cars with varying numbers of doors.
+## The Scenario:
+In the town of Eduville, the local school is moving from paper-based records to a digital system. They have collected student data in various formats, including JSON. However, they need a reliable way to import this data into their new system without crashing, even if the data is sometimes malformed.
+You are the software consultant chosen by the Eduville school to build the student data parser. Your challenge is to create a function to parse JSON data representing a student and to implement robust error handling in case the data is not in the correct format.
 
-You are the lead developer hired by the Autoville showroom to create the vehicle management system. Your task is to define classes for vehicles in general and cars in particular, including a method to describe the cars.
 
-## Objectives
-1. Create a Vehicle class.
-2. Create a Car class that inherits from Vehicle.
-3. Add a method to describe the car.
+## Your Goals:
+- Parse JSON data.
+- Implement error handling for invalid JSON.
 
 
 ## Instructions
-You do not need to modify the HTML for this exercise. Finish the JavaScript functions to do the following:
+1. Fork the CodePen found here: Parsing Practice: Student Data Parser
+2. You do not need to modify the HTML for this exercise. Finish the JavaScript functions as follows:
+3. Inside the parseStudentData function, set up a try/catch block to handle errors in the data, in case the JSON string is malformed.
+4. Inside the try block, use JSON.parse() to parse the input string.
+5. In the catch block, return a custom error message.
+6. Un-comment the last two lines to view the results in the console.
 
-1. Create a class Vehicle with properties for make and model.
-2. Create a class Car that extends Vehicle and includes an additional property for numberOfDoors.
-3. Write a method describeCar() inside the Car class.
-4. Uncomment the last line and view the results in the console.
+
+Post the URL of your forked version of this Codepen to this forum.
+You will not be graded on this challenge. It will be used for class discussion and knowledge assessment. Please submit your attempt even if it's not working completely.
+You should see a message similar to this in your console if you have completed this exercise successfully:
