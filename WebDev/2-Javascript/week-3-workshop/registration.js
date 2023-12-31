@@ -33,13 +33,14 @@ class Bootcamp {
         this.level = level;
         this.students = students;
         // this.students.push(new Student(this.name, level, students));  // THIS IS THE PROBLEM CHILD, it is adding a Student object with name and level property values.
+        // ^ above commented out line can be deleted, just thought I'd point it out.
     }
 
 
     // Task 3
 
     /**
-     * Registers a student by adding them to the list of students.
+     * Registers a student by adding them to the list of students, if they don't already exist.
      *
      * @param {Object} studentToRegister - The student object to register.
      * @param {string} studentToRegister.name - The name of the student.
@@ -47,6 +48,11 @@ class Bootcamp {
      * @returns {boolean} - Returns true if the student is successfully registered, otherwise false.
      */
     registerStudent(studentToRegister) {
+        /*
+        * there was also a bug in this function that was exiting the for loop the FIRST time it checked for -
+        * a pre-existing email, meaning that if the first student object in the array did not contain the duplicate -
+        * email property we would still add a new student object, so we would end up with duplicates.
+        */
         if (!studentToRegister.name || !studentToRegister.email) {
             console.log('Invalid name or email.');
             return false;
@@ -147,7 +153,7 @@ const runTest = (bootcamp, student) => {
         console.log("TASK 4: PASS 2/2");
     }
     bootcamp.students = newBootcamp;  // Refilling bootcamp.students array.
-    console.log(reactBootcamp);
+    // console.log(reactBootcamp);
 };
 runTest(reactBootcamp, testStudent);
 
@@ -155,20 +161,13 @@ runTest(reactBootcamp, testStudent);
 ///// Bonus Tasks Tests /////
 // Task 1 - Get bootcamp info
 console.log(reactBootcamp.getInfo());
+console.log('END BONUS TASK 1')
 
 // Task 2 - Remove student
 reactBootcamp.removeStudent('test@example.com');
 console.log(reactBootcamp.students);
+console.log('END BONUS TASK 2');
 
 // Task 3 - Get student info
 console.log(testStudent.getInfo());
-
-
-
-
-
-reactBootcamp.registerStudent(new Student('John', 'john@example.com'));
-reactBootcamp.registerStudent(new Student('John', 'john@example.com'));
-reactBootcamp.registerStudent(new Student('John', 'john@example.com'));
-reactBootcamp.registerStudent(new Student('John', 'john@example.com'));
-console.log(reactBootcamp.students);
+console.log('END BONUS TASK 3');
