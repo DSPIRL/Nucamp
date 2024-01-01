@@ -32,7 +32,7 @@ class Bootcamp {
         this.name = name;
         this.level = level;
         this.students = students;
-        // this.students.push(new Student(this.name, level, students));  // THIS IS THE PROBLEM CHILD, it is adding a Student object with name and level property values.
+        // this.students.push(new Student(this.name, level, students));  // THIS IS A PROBLEM CHILD, it is adding a Student object with name and level property values.
         // ^ above commented out line can be deleted, just thought I'd point it out.
     }
 
