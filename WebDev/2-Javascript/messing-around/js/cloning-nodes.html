@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Cloning Nodes Demo</title>
+    <style>
+        body {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="myList">
+        <li>Red</li>
+        <li>Green</li>
+        <li>Blue</li>
+    </ul>
+
+    <button type="button" onclick="cloneListItem()">Copy just the last listitem</button>
+    <button type="button" onclick="cloneListItemBranch()">Copy the last listitem and its branch</button>
+    <button type="button" onclick="cloneAllListItemsAndBranches()">Copy entire list</button>
+
+    <script>
+        const listNode = document.querySelector('#myList');
+    const listNodeAmount= listNode.childElementCount;
+        const nodeToCopy = listNode.lastElementChild;
+
+        function cloneListItem() {
+            const copy = nodeToCopy.cloneNode();
+            listNode.appendChild(copy);
+        }
+
+        function cloneListItemBranch() {
+            const copy = nodeToCopy.cloneNode(true);
+            listNode.appendChild(copy);
+        }
+
+        function cloneAllListItemsAndBranches() {
+            for (let i = 1; i <= listNodeAmount; i++) {
+                let nodeToCopy = listNode.querySelector(`:nth-child(${i})`);
+                const copy = nodeToCopy.cloneNode(true);
+                listNode.appendChild(copy);
+            }
+
+
+
+
+
+            listNode.appendChild(copy);
+        }
+    </script>
+</body>
+</html>
