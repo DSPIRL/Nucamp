@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InspireDesign Color Inspiration Tool</title> 
+    <style>
+        /* there are no specifications for styles in this exercise, so students may apply any styles they wish */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2 {
+            color: #444;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #colorBtn {
+            background-color: lightblue;
+        }
+        #resetBtn {
+            background-color: lightgray;
+        }
+        #container {
+            padding: 15px;
+            background-color: white;
+            font-size: 18px;
+            width: 80%;
+            margin: 20px auto;
+            height: 300px;
+        }
+        .instructions {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>InspireDesign Color Inspiration Tool</h1>
+    <p class="instructions">Welcome to the Color Inspiration Tool! Designers can use this tool to generate fresh and unique color schemes for their projects. Simply click the button below to generate a new color inspiration.</p>
+    <button id="colorBtn">Change Color</button>
+    <button id="resetBtn">Reset Color</button>
+    <div id="container">Color Code: <span id="colorCode">#FFFFFF</span></div>
+
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF'; //string of possible hexadecimal characters
+            let color = '#'; //beginning of the hex color string
+            for (let i = 0; i < 6; i++) { //this will loop 6 times because a hex color string has 6 characters
+                color += letters[Math.floor(Math.random() * 16)]; //with each iteration, concatenate a new character onto the color string, which comes from the letters string at an index location that is determined by a random number
+            }
+            return color; //returns the complete color string to the function that called it
+        }
+
+        document.getElementById('colorBtn').addEventListener('click', function() { //listen for a click on the colorBtn, and when it happens, do this
+            const color = getRandomColor(); //get a color string from the other function
+            document.getElementById('container').style.backgroundColor = color; //change the style.backgroundColor property of the node to the new color
+            document.getElementById('colorCode').innerText = color; //change the innterText of the node to the new color (which is a string)
+        });
+
+        document.getElementById('colorBtn').addEventListener('mouseover', function() { //listen for a mouseover event, then do this
+            this.style.backgroundColor = 'lightgreen'; //change the style.backgroundColor property of the node to lightgreen or whatever color you want
+        });
+
+        document.getElementById('colorBtn').addEventListener('mouseout', function() { //listen for a mouseout event, then do this
+            this.style.backgroundColor = 'lightblue'; //change the backgroundColor property of the node to lightblue or whatever color you started with for this button
+        });
+
+        document.getElementById('resetBtn').addEventListener('click', function() { //listen for a click on the reset button, then do this
+            document.getElementById('container').style.backgroundColor = '#FFFFFF'; //change the background color of the container back to white
+            document.getElementById('colorCode').innerText = '#FFFFFF'; //change the text of the color name to #FFFFFF for white
+        });
+        
+    </script>
+</body>
+</html>

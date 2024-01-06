@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List App</title>
+    <style>
+        ul {
+            list-style-type: "\2610   ";
+            cursor: pointer;
+        }
+        @media print {
+            .noPrint {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>My Shopping List</h1>
+    <form id="myForm" class="noPrint">
+        <label for="item">Add an item:</label>
+        <input id="item" type="text" name="item">
+        <button onClick="getItem()">Add</button>
+    </form>
+    <ul id="shoppingList">
+    </ul>
+    <button class="noPrint" onClick="printList()">Print List</button>
+    <script>
+        const list = [];
+        const shoppingList = document.getElementById("shoppingList");
+        function getItem() {
+            event.preventDefault();
+            const item = document.getElementById("item").value;
+            console.log(item);
+            if (item && !list.includes(item)) {
+                list.push(item);
+                list.sort();
+                removeList();
+                makeList();
+            } else {
+                console.log(`Item ${item} is invalid or a duplicate`);
+            }
+            document.getElementById("myForm").reset();
+            console.log(list);
+        }
+
+        function makeList() {
+            for (let item of list) {
+                const listItem = document.createElement("li");
+                listItem.textContent = item;
+                listItem.addEventListener("click", removeItem);
+                shoppingList.appendChild(listItem);
+            }
+        }
+
+        function removeList() {
+            while (shoppingList.firstChild) {
+                shoppingList.removeChild(shoppingList.firstChild);
+            }
+        }
+
+        function removeItem(event) {
+            try {
+                const item = event.currentTarget.textContent;
+                const index = list.indexOf(item);
+                if (index > -1) {
+                    list.splice(index, 1);
+                    console.log(list);
+                    removeList();
+                    makeList();
+                } else {
+                    throw new Error(`Item ${item} not found in the list.`);
+                }
+            } catch (err) {
+                console.error(err.message);
+            }
+        }
+
+        function printList() {
+            window.print();
+        }
+
+    </script>
+</body>
+</html>
