@@ -93,7 +93,7 @@ function changeDifficulty() {
 }
 
 function getDifficulty() {
-    const difficultyDdl = document.getElementById('difficulty-selector');
+    const difficultyDdl = document.getElementById('difficultySelector');
     return difficultyDdl.value;
 }
 
