@@ -1,4 +1,5 @@
 let difficultyLevel = changeDifficulty();
+let currentLevel = difficultyLevel;
 let winStreak = 0;
 let attemptCount = 0;
 const difficultyButton = document.getElementById('changeButton');
@@ -8,12 +9,13 @@ const theRightSide = document.getElementById('rightSide');
 function newGame() {
     clearGame();
     difficultyLevel = changeDifficulty();
+    currentLevel = difficultyLevel;
     generateGame();
     winStreak = 0;
 }
 
 function generateGame() {
-    for (let i = 0; i < difficultyLevel; i++) {
+    for (let i = 0; i < currentLevel; i++) {
         let face = document.createElement('img');
         face.src = "img/new-smile.png";
         face.width = 60;
@@ -51,7 +53,7 @@ function nextLevel(event) {
     }
 
     event.stopPropagation();
-    difficultyLevel += difficultyLevel;
+    currentLevel += difficultyLevel;
     generateGame();
 }
 
