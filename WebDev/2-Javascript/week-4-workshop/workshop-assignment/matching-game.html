@@ -9,18 +9,18 @@
     <title>Matching Game</title>
 </head>
 <body>
-<section id="difficulty-section">
-    <h1>Matching Game</h1>
-    <label for="difficulty-selector">Select game difficulty: </label>
-    <select name="difficulty" id="difficulty-selector">
+<section id="difficultySection">
+    <h1 id="gameHeader">Matching Game</h1>
+    <label id="difficultyDescriptor" for="difficultySelector">Select game difficulty: </label>
+    <select class="game-controls" name="difficulty" id="difficultySelector">
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
     </select>
-    <button id="changeButton">Change difficulty</button>
+    <button class="game-controls" id="changeButton">Change difficulty</button>
     <p>Click on the extra smiling face on the left.</p>
 </section>
-<section id="game-section">
+<section id="gameSection">
     <div id="leftSide" class="game-board"></div>
     <div id="rightSide" class="game-board"></div>
 </section>
