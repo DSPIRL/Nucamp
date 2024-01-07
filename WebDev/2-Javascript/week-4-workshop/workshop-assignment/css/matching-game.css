@@ -21,39 +21,31 @@ img {
 .game-controls {
     color: white;
     height: 2rem;
-    width: 12rem;
+    width: 10rem;
     margin: 10px;
     border: 3px solid white;
-    background-color: #282828;
+    background-color: #363636;
     border-radius: 10px;
     transition-duration: 300ms;
 }
 
 .game-controls:hover {
+    width: 12rem;
     color: black;
     border-color: black;
-    background-color: yellow;
+    background-color: #ffff00;
     font-weight: bold;
 
 }
 
 .game-board {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
     border: 2px solid #ffffff;
+    border-radius: 10px;
 }
 
 #difficultySelector {
     text-align: center;
-    /*appearance: none;*/
-}
-
-#difficultySelector::after {
-    position: absolute;
-    content: "▼";
-    right: 20px;
-    top: calc(50% - 7px);
 }
 
 #difficultySection {

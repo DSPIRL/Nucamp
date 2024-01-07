@@ -1,3 +1,4 @@
+let difficultyName = '';
 let difficultyLevel = changeDifficulty();
 let currentLevel = difficultyLevel;
 let winStreak = 0;
@@ -5,6 +6,7 @@ let attemptCount = 0;
 const difficultyButton = document.getElementById('changeButton');
 const theLeftSide = document.getElementById('leftSide');
 const theRightSide = document.getElementById('rightSide');
+const difficultyFace = {easy: 'img/green-smile.png', medium: 'img/yellow-smile.png', hard: 'img/red-smile.png'};
 
 function newGame() {
     clearGame();
@@ -17,7 +19,7 @@ function newGame() {
 function generateGame() {
     for (let i = 0; i < currentLevel; i++) {
         let face = document.createElement('img');
-        face.src = "img/new-smile.png";
+        face.src = `${difficultyFace[difficultyName]}`;
         face.width = 60;
         face.className = "guessItem";
         let randomTop = Math.floor(Math.random() * 400 + 1);
@@ -78,14 +80,14 @@ function gameOver() {
 }
 
 function changeDifficulty() {
-    let difficulty = getDifficulty();
+    difficultyName = getDifficulty();
     let selection = 0;
 
-    if (difficulty === 'easy') {
+    if (difficultyName === 'easy') {
         selection = 3;
-    } else if (difficulty === 'medium') {
+    } else if (difficultyName === 'medium') {
         selection = 5;
-    } else if (difficulty === 'hard') {
+    } else if (difficultyName === 'hard') {
         selection = 7;
     }
 
