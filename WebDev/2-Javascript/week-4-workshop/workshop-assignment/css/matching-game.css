@@ -18,6 +18,10 @@ img {
     position: absolute;
 }
 
+div img {
+    cursor: pointer;
+}
+
 .game-controls {
     color: white;
     height: 2rem;
